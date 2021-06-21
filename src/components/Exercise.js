@@ -9,7 +9,7 @@ const Exercise = (props) => {
       <td>{props.exercise.date.slice(0, 10)}</td>
       <td>
         <Link to={`/editExercise/${props.exercise._id}`}>edit</Link> |{' '}
-        <a href='/#' onClick={() => props.delete(props.exercise._id)}>
+        <a href="!#" onClick={() => props.delete(props.exercise._id)}>
           delete
         </a>
       </td>
