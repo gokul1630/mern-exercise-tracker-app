@@ -21,7 +21,7 @@ class CreateExercise extends Component {
       .get(constants.URL + `users/`)
       .then((res) => {
         if (res.data.length > 0) {
-          this.setState({ users: res.data.map((res) => res.user), user: this.state.users[0] });
+          this.setState({ users: res.data.map((res) => res.user), user: res.data[0].user });
         }
       })
       .catch((err) => console.log(err));
