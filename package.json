@@ -2,7 +2,7 @@
   "name": "tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gokul1630.github.io/mern-exercise-tracker-app/",
+  "homepage": "https://gokul1630.github.io/mern-stack-exercise-tracker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
