@@ -21,7 +21,10 @@ class CreateExercise extends Component {
       .get(constants.URL + `users/`)
       .then((res) => {
         if (res.data.length > 0) {
-          this.setState({ users: res.data.map((res) => res.user), user: res.data[0].user });
+          this.setState({
+            users: res.data.map((res) => res.user),
+            user: res.data[0].user,
+          });
         }
       })
       .catch((err) => console.log(err));
@@ -60,12 +63,21 @@ class CreateExercise extends Component {
         <br />
         <div style={{ fontSize: '4vh' }}>Create New Exercise</div>
         <br />
-        <form>
+        <form onSubmit={this.onSubmit.bind(this)}>
           <div className='mb-3'>
-            <label htmlFor='user' style={{ fontSize: '3vh' }} className='form-label'>
+            <label
+              htmlFor='user'
+              style={{ fontSize: '3vh' }}
+              className='form-label'
+            >
               User
             </label>
-            <select id='user' className='form-control form-select' value={this.state.user} onChange={this.onOptionChange}>
+            <select
+              id='user'
+              className='form-control form-select'
+              value={this.state.user}
+              onChange={this.onOptionChange}
+            >
               {this.state.users.map(function (res) {
                 return (
                   <option key={res} value={res}>
@@ -76,27 +88,57 @@ class CreateExercise extends Component {
             </select>
           </div>
           <div className='mb-3'>
-            <label style={{ fontSize: '3vh' }} htmlFor='description' className='form-label'>
+            <label
+              style={{ fontSize: '3vh' }}
+              htmlFor='description'
+              className='form-label'
+            >
               Description
             </label>
-            <input type='text' className='form-control' id='description' value={this.state.description} onChange={this.onChangeDescription} />
+            <input
+              type='text'
+              className='form-control'
+              id='description'
+              value={this.state.description}
+              onChange={this.onChangeDescription}
+              required
+            />
           </div>
           <div className='mb-3'>
-            <label style={{ fontSize: '3vh' }} htmlFor='duration' className='form-label'>
+            <label
+              style={{ fontSize: '3vh' }}
+              htmlFor='duration'
+              className='form-label'
+            >
               Duration
             </label>
-            <input type='number' className='form-control' id='duration' value={this.state.duration} onChange={this.onChangeDuration} />
+            <input
+              type='number'
+              className='form-control'
+              id='duration'
+              value={this.state.duration}
+              onChange={this.onChangeDuration}
+            />
           </div>
           <div className='mb-3'>
-            <label style={{ fontSize: '3vh' }} htmlFor='datepicker' className='form-label'>
+            <label
+              style={{ fontSize: '3vh' }}
+              htmlFor='datepicker'
+              className='form-label'
+            >
               Pick Date
             </label>
             <div style={{ maxWidth: '30%' }}>
-              <DatePicker className='form-control' id='datepicker' selected={this.state.date} onChange={this.onDateChange} />
+              <DatePicker
+                className='form-control'
+                id='datepicker'
+                selected={this.state.date}
+                onChange={this.onDateChange}
+              />
             </div>
           </div>
           <br />
-          <button type='submit' className='btn btn-primary' onClick={this.onSubmit.bind(this)}>
+          <button type='submit' className='btn btn-primary'>
             Submit
           </button>
         </form>
