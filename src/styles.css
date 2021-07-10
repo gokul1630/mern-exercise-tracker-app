@@ -6,3 +6,18 @@ td {
 thead {
   background-color: rgb(209, 203, 203);
 }
+.footer{
+  position:relative;
+  top: 2vw;
+  background-color: #535353;
+  width: 100%;
+  text-align: center;
+}
+.footer-txt{
+  color: white;
+  padding: 10px;
+}
+.footer a{
+  text-decoration: none;
+  color: rgb(0, 238, 255);
+}

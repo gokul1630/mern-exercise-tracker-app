@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import constants from '../constants';
 import Exercise from './Exercise';
+import Footer from './Footer';
 
 class ExerciseList extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class ExerciseList extends Component {
 
           <tbody>{this.exercises()}</tbody>
         </table>
+        <Footer/>
       </div>
     );
   }
